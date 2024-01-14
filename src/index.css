@@ -25,6 +25,8 @@ body {
 
 i{
     margin-bottom: 10px;
+    text-transform: capitalize;
+
 }
 
 h1 {
@@ -262,7 +264,8 @@ button:active {
     }
 
     i {
-        font-size: 14px;
+        font-size: 15px;
+        text-transform: capitalize;
     }
 }
 
