@@ -9,7 +9,7 @@ const Deposit = () => {
 
   return (
     <div>
-      <pre>deposit</pre>
+      <i>deposit</i>
       {enteredNumber && <h1>{enteredNumber}</h1>}
       <div>
         <div id="numbers">
