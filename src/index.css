@@ -12,10 +12,8 @@
     color: var(--second);
 }
 
-pre{
-    margin-bottom: 10px;
-    text-transform: capitalize;
-}
+
+
 
 body {
     min-height: 100vh;
@@ -23,7 +21,6 @@ body {
     display: grid;
     justify-items: center;
     align-content: center;
-    
 }
 
 
@@ -230,6 +227,7 @@ button:active {
       height: 5em;
       margin: 0.5em;
     }
+
   
     .back {
       top: 20px;
@@ -248,6 +246,17 @@ button:active {
   
     .main_page {
       margin-top: 20px;
+    }
+    button:hover{
+        animation: none;
+    }
+    
+    button:hover span {
+        animation: none;
+    }
+
+    b{
+        animation: none;
     }
   }
   
