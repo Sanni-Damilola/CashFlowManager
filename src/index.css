@@ -223,14 +223,14 @@ button:active {
     b {
         font-size: 30px;
         margin-bottom: 20px;
-        animation: none; /* Disable animation for smaller screens */
+        animation: none; 
     }
 
     button {
         width: 5em;
         height: 5em;
         margin: 0.5em;
-        animation: none; /* Disable animation on hover for smaller screens */
+        animation: none; 
     }
 
     .back {
@@ -242,11 +242,11 @@ button:active {
         width: 10em;
         height: 1.5em;
         margin-bottom: 0.5em;
-        animation: none; /* Disable animation on hover for smaller screens */
+        animation: none; 
     }
 
     #screen:hover {
-        animation: none; /* Disable animation on hover for smaller screens */
+        animation: none; 
     }
 
     .main_page {
@@ -254,11 +254,11 @@ button:active {
     }
 
     button:hover {
-        animation: none; /* Disable animation on hover for smaller screens */
+        animation: none; 
     }
 
     button:hover span {
-        animation: none; /* Disable animation on hover for smaller screens */
+        animation: none; 
     }
 
     i {
