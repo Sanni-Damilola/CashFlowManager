@@ -208,61 +208,62 @@ button:active {
 }
 
 
+
 @media screen and (max-width: 500px) {
     body {
-      font-size: 1.5rem;
-      height: fit-content;
+        font-size: 1.5rem;
+        height: fit-content;
     }
-  
+
     h1 {
-      font-size: 30px;
-      margin-bottom: 20px;
+        font-size: 30px;
+        margin-bottom: 20px;
     }
-  
+
     b {
-      font-size: 30px;
-      margin-bottom: 20px;
+        font-size: 30px;
+        margin-bottom: 20px;
+        animation: none; /* Disable animation for smaller screens */
     }
-  
+
     button {
-      width: 5em;
-      height: 5em;
-      margin: 0.5em;
+        width: 5em;
+        height: 5em;
+        margin: 0.5em;
+        animation: none; /* Disable animation on hover for smaller screens */
     }
 
-  
     .back {
-      top: 20px;
-      right: 20px;
+        top: 20px;
+        right: 20px;
     }
-  
+
     #screen {
-      width: 10em;
-      height: 1.5em;
-      margin-bottom: 0.5em;
+        width: 10em;
+        height: 1.5em;
+        margin-bottom: 0.5em;
+        animation: none; /* Disable animation on hover for smaller screens */
     }
-  
+
     #screen:hover {
-      animation: none; 
+        animation: none; /* Disable animation on hover for smaller screens */
     }
-  
+
     .main_page {
-      margin-top: 20px;
+        margin-top: 20px;
     }
-    button:hover{
-        animation: none;
+
+    button:hover {
+        animation: none; /* Disable animation on hover for smaller screens */
     }
-    
+
     button:hover span {
-        animation: none;
+        animation: none; /* Disable animation on hover for smaller screens */
     }
 
-    b{
-        animation: none;
-    }
-
-    i{
+    i {
         font-size: 14px;
     }
-  }
+}
+
   
