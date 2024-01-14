@@ -23,7 +23,9 @@ body {
     align-content: center;
 }
 
-
+i{
+    margin-bottom: 10px;
+}
 
 h1 {
     color: var(--main);
@@ -257,6 +259,10 @@ button:active {
 
     b{
         animation: none;
+    }
+
+    i{
+        font-size: 14px;
     }
   }
   
