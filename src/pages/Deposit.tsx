@@ -22,16 +22,17 @@ const Deposit = () => {
       <div>
         <div id="numbers">
           <div>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "7")}>
-              <span>7</span>
+            <button onClick={() => handleButtonClick(setEnteredNumber, "1")}>
+              <span>1</span>
             </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "8")}>
-              <span>8</span>
+            <button onClick={() => handleButtonClick(setEnteredNumber, "2")}>
+              <span>2</span>
             </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "9")}>
-              <span>9</span>
+            <button onClick={() => handleButtonClick(setEnteredNumber, "3")}>
+              <span>3</span>
             </button>
           </div>
+
           <div>
             <button onClick={() => handleButtonClick(setEnteredNumber, "4")}>
               <span>4</span>
@@ -44,14 +45,14 @@ const Deposit = () => {
             </button>
           </div>
           <div>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "1")}>
-              <span>1</span>
+            <button onClick={() => handleButtonClick(setEnteredNumber, "7")}>
+              <span>7</span>
             </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "2")}>
-              <span>2</span>
+            <button onClick={() => handleButtonClick(setEnteredNumber, "8")}>
+              <span>8</span>
             </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "3")}>
-              <span>3</span>
+            <button onClick={() => handleButtonClick(setEnteredNumber, "9")}>
+              <span>9</span>
             </button>
           </div>
           <div>
