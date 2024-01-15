@@ -18,7 +18,10 @@ body {
     display: grid;
     justify-items: center;
     align-content: center;
+    
 }
+
+
 
 h1 {
     color: var(--main);
@@ -87,6 +90,7 @@ button {
     height: 7em;
     margin: .7em;
     animation: glow_out 500ms ease forwards;
+    cursor: pointer;
 }
 
 button:hover{
@@ -197,3 +201,47 @@ button:active {
         box-shadow: 0 0 0 0.5em var(--third);
     }
 }
+
+
+@media screen and (max-width: 500px) {
+    body {
+      font-size: 1.5rem;
+      height: fit-content;
+    }
+  
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  
+    b {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  
+    button {
+      width: 5em;
+      height: 5em;
+      margin: 0.5em;
+    }
+  
+    .back {
+      top: 20px;
+      right: 20px;
+    }
+  
+    #screen {
+      width: 10em;
+      height: 1.5em;
+      margin-bottom: 0.5em;
+    }
+  
+    #screen:hover {
+      animation: none; 
+    }
+  
+    .main_page {
+      margin-top: 20px;
+    }
+  }
+  

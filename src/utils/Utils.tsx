@@ -14,3 +14,7 @@ export const handleCancel = (
 };
 
 export default { handleButtonClick, handleCancel };
+
+export const handleNavigateBack = (): void => {
+  window.history.back();
+};
