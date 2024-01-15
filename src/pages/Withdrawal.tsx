@@ -61,7 +61,7 @@ const Withdrawal = () => {
                 <MdCancel />
               </span>
             </button>
-            <button onClick={() => handleCancel(setEnteredNumber)}>
+            <button onClick={() => alert("In Progress")}>
               <span>
                 <IoEnterOutline />
               </span>
