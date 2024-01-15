@@ -1,0 +1,28 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+ }
+
+.button {
+    background-color: #68bfdb; 
+    color: #fff; 
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: capitalize;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+  }
+  
+  .button:hover {
+    background-color: #5a8ac7; /* Change background color slightly on hover */
+  }
+  
