@@ -2,6 +2,198 @@
     margin: 0;
 }
 
- body{
-    background-color: lavender; 
- }
+ 
+:root {
+    --main: #323232;
+    --cont: #FFF2F9;
+    --second: #FA4EAB;
+    --third: #FE83C6;
+    font-size: 2.3rem;
+    color: var(--second);
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+h1 {
+    color: var(--main);
+    width: 6em;
+    border-radius: 1em;
+    background-color: var(--second);
+    font-weight: 520;
+    font-size: 45px;
+    padding: 10px 15px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+span {
+    color: var(--second);
+    font-size: 3.5em;
+    text-transform: uppercase;
+}
+
+p {
+    color: var(--main);
+}
+
+.back{
+    cursor: pointer;
+    top: 40px;
+    position: absolute;
+    width: fit-content;
+    z-index: 999;
+    margin: 10px;
+    right: 50px;
+}
+
+b {
+    color: var(--main);
+    border-radius: 1em;
+    background-color: var(--second);
+    font-weight: 520;
+    font-size: 45px;
+    padding: 10px 15px;
+    text-align: center;
+    margin-bottom: 40px;
+    animation: bright 2.5s ease-in-out infinite alternate;
+}
+
+.main_page{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.main_page > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0);
+    border: solid;
+    border-radius: 10%;
+    border-color: var(--cont);
+    width: 7em;
+    height: 7em;
+    margin: .7em;
+    animation: glow_out 500ms ease forwards;
+}
+
+button:hover{
+    animation: glow_in 500ms ease forwards;
+}
+
+button:hover span {
+    animation: cont 500ms ease forwards;
+}
+
+button:active {
+    width: 6em;
+    height: 6em;
+    position: relative;
+    left: 0.5em;
+    margin-right: 1.7em; 
+}
+
+#screen {
+    border-radius: 1em;
+    background-color: var(--third);
+    width: 13em;
+    height: 2.2em;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 1em;
+    animation: appear 500ms ease forwards;
+}
+
+#screen:hover {
+    animation: disappear 500ms ease forwards;
+}
+
+#screen:hover p {
+    animation: text 500ms ease forwards;
+}
+
+#numbers {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+@keyframes cont {
+    to {
+        color: var(--cont);
+    }
+}
+
+@keyframes text {
+    to {
+        color: var(--second)
+    }
+}
+
+@keyframes bright {
+    0% {
+        border: solid;
+        border-color: var(--main);
+        background-color: var(--second);
+        color: var(--main);
+    }
+
+    100% {
+        border: solid;
+        border-color: var(--second);
+        background-color: #ffffff00;
+        color: var(--second);
+    }
+}
+
+@keyframes appear {
+    from {
+        background-color: #ffffff00;
+        box-shadow: 0 0 0 0.3em var(--second);
+        border-color: var(--second);
+    }
+}
+
+@keyframes disappear {
+    to {
+        background-color: #ffffff00;
+        box-shadow: 0 0 0 0.3em var(--second);
+        border-color: var(--second);
+    }
+}
+
+@keyframes glow_out {
+    from {
+        border-color: var(--third);
+        box-shadow: 0 0 0 0.5em var(--third);
+    }
+
+    to {
+        border-color: var(--third);
+        box-shadow: 0 0 0 0em var(--third);
+    }
+}
+
+@keyframes glow_in {
+    from {
+        border-color: var(--third);
+        box-shadow: 0 0 0 0em var(--third);
+    }
+    to {
+        border-color: var(--third);
+        box-shadow: 0 0 0 0.5em var(--third);
+    }
+}

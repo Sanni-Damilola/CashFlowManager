@@ -1,13 +1,12 @@
 import { Buttons } from "../Buttons";
-import "../App.css";
 
 const MainPage = () => {
   return (
-    <div className="main-container">
-      <h1>Check Charges</h1>
+    <div className="main_page">
+      <b>Hi 👋🏻</b>
       <div>
-        <Buttons route="/withdrawal" text="withdrawal" />
-        <Buttons route="/deposit" text="deposit" />
+        <Buttons route="/withdrawal" text="w" />
+        <Buttons route="/deposit" text="d" />
       </div>
     </div>
   );

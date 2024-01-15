@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
 
 interface ButtonProps {
   text?: string;
@@ -10,7 +9,11 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = ({ text, route }) => {
   return (
     <Link style={{ textDecoration: "none" }} to={route!}>
-      <button className="button">{text}</button>
+      <div id="numbers">
+        <button>
+          <span>{text}</span>
+        </button>
+      </div>
     </Link>
   );
 };
