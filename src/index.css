@@ -30,7 +30,6 @@ body {
 
 h1 {
     color: var(--main);
-    width: 6em;
     border-radius: 1em;
     background-color: var(--second);
     font-weight: 520;
@@ -38,6 +37,8 @@ h1 {
     padding: 10px 15px;
     text-align: center;
     margin-bottom: 40px;
+    word-wrap: break-word;
+    max-width: 300px;
 }
 
 span {
