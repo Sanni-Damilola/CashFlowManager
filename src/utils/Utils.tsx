@@ -7,7 +7,7 @@ export const handleButtonClick = (
   setEnteredNumber((prevNumber) => {
     if (prevNumber.length < 12) {
       const newNumber = (prevNumber + number).replace(/\D/g, "");
-      const formattedNumber = Number(newNumber).toLocaleString();
+      const formattedNumber = new Intl.NumberFormat().format(Number(newNumber));
       return formattedNumber;
     } else {
       return prevNumber;
