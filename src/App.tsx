@@ -1,9 +1,10 @@
-import { MainPage } from "./pages";
+import { RouterProvider } from "react-router-dom";
+import { Routes } from "./routes";
 
 const App = () => {
   return (
     <div>
-      <MainPage />
+      <RouterProvider router={Routes()} />
     </div>
   );
 };
