@@ -56,13 +56,13 @@ const Deposit = () => {
             </button>
           </div>
           <div>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "0")}>
-              <span>0</span>
-            </button>
             <button onClick={() => handleCancel(setEnteredNumber)}>
               <span>
                 <MdCancel />
               </span>
+            </button>
+            <button onClick={() => handleButtonClick(setEnteredNumber, "0")}>
+              <span>0</span>
             </button>
             <button onClick={() => alert("In Progress")}>
               <span>
