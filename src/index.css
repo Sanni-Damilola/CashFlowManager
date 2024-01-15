@@ -12,6 +12,11 @@
     color: var(--second);
 }
 
+pre{
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
 body {
     min-height: 100vh;
     background-image: linear-gradient(to right, #434343 0%, black 100%);

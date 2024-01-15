@@ -7,6 +7,7 @@ const Withdrawal = () => {
 
   return (
     <div>
+      <pre>withdrawal</pre>
       {enteredNumber && <h1>{enteredNumber}</h1>}
       <div>
         <div id="numbers">
