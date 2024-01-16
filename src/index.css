@@ -22,7 +22,6 @@ body {
 }
 
 i {
-    margin-bottom: 15px;
     text-transform: capitalize;
 }
 
@@ -34,7 +33,7 @@ h1 {
     font-size: 45px;
     padding: 10px 15px;
     text-align: center;
-    margin-bottom: 40px;
+    margin: 10px;
     word-wrap: break-word;
     max-width: 300px;
 }
