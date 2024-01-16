@@ -28,14 +28,15 @@ body {
   width: 100%;
   padding: 10px;
   text-align: center;
-  font-size: 13px; 
+  font-size: 12px; 
 }
 
 .footer > p {
     color: white; 
 }
 .footer > p > a {
-    color: var(--third); 
+    color: var(--third);
+    font-size: 14px; 
 }
 
 i {
