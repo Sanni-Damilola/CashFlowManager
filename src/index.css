@@ -257,8 +257,8 @@ button:active {
     }
 
     button:active {
-        width: auto;
-        height: auto;
+        width: fit-content;
+        height: fit-content;
         position: static;
         left: auto;
         margin-right: auto;
