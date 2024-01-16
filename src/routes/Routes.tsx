@@ -1,19 +1,41 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { Deposit, MainPage, Withdrawal } from "../pages";
+
+const Withdrawal = lazy(() => import("../pages/Withdrawal"));
+const Deposit = lazy(() => import("../pages/Deposit"));
+const MainPage = lazy(() => import("../pages/MainPage"));
+
+const LoadingFallback = () => (
+  <div className="loading-overlay">
+    <div className="loading-spinner" />
+  </div>
+);
 
 const Routes = () => {
   return createBrowserRouter([
     {
       path: "withdrawal",
-      element: <Withdrawal />,
+      element: (
+        <Suspense fallback={<LoadingFallback />}>
+          <Withdrawal />
+        </Suspense>
+      ),
     },
     {
       path: "deposit",
-      element: <Deposit />,
+      element: (
+        <Suspense fallback={<LoadingFallback />}>
+          <Deposit />
+        </Suspense>
+      ),
     },
     {
       path: "/",
-      element: <MainPage />,
+      element: (
+        <Suspense fallback={<LoadingFallback />}>
+          <MainPage />
+        </Suspense>
+      ),
     },
   ]);
 };
