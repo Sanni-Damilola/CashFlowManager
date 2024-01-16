@@ -105,13 +105,7 @@ button:hover span {
     animation: cont 500ms ease forwards;
 }
 
-/* button:active {
-    width: 6em;
-    height: 6em;
-    position: relative;
-    left: 0.5em;
-    margin-right: 1.7em;
-} */
+
 
 #screen {
     border-radius: 1em;
@@ -256,5 +250,5 @@ button:hover span {
         text-transform: capitalize;
     }
 
- 
+    
 }
