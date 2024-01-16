@@ -6,7 +6,9 @@ export const handleButtonClick = (
 ): void => {
   setEnteredNumber((prevNumber) => {
     if (prevNumber.length < 12) {
-      return prevNumber + number;
+      const newNumber = (prevNumber + number).replace(/\D/g, "");
+      const formattedNumber = Number(newNumber).toLocaleString();
+      return formattedNumber;
     } else {
       return prevNumber;
     }
