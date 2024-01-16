@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { RouterProvider } from "react-router-dom";
 import { Routes } from "./routes";
+import { Footer } from "./static";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -15,13 +16,13 @@ const App = () => {
 
   return (
     <div style={{ position: "relative" }}>
-      {loading && (
-        <div className="loading-overlay">
-          <div className="loading-spinner" />
-        </div>
+      {!loading && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <RouterProvider router={Routes()} />
+        </Suspense>
       )}
 
-      {!loading && <RouterProvider router={Routes()} />}
+      <Footer />
     </div>
   );
 };
