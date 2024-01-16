@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { MdCancel } from "react-icons/md";
 import { IoEnterOutline } from "react-icons/io5";
-import { handleButtonClick, handleCancel } from "../utils/Utils";
+import {
+  handleButtonClick,
+  handleCancel,
+  handleNavigateBack,
+} from "../utils/Utils";
+import { IoMdArrowRoundBack } from "react-icons/io";
 const Withdrawal = () => {
   const [enteredNumber, setEnteredNumber] = useState<string>("");
 
   return (
     <div>
       <i>withdrawal</i>
+      <div onClick={handleNavigateBack} className="back">
+        <IoMdArrowRoundBack />
+      </div>
       {enteredNumber && <h1>{enteredNumber}</h1>}
       <div>
         <div id="numbers">
