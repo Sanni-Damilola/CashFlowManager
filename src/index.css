@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
- 
 :root {
     --main: #323232;
     --cont: #FFF2F9;
@@ -12,9 +13,6 @@
     color: var(--second);
 }
 
-
-
-
 body {
     min-height: 100vh;
     background-image: linear-gradient(to right, #434343 0%, black 100%);
@@ -23,10 +21,9 @@ body {
     align-content: center;
 }
 
-i{
+i {
     margin-bottom: 10px;
     text-transform: capitalize;
-
 }
 
 h1 {
@@ -52,7 +49,7 @@ p {
     color: var(--main);
 }
 
-.back{
+.back {
     cursor: pointer;
     top: 40px;
     position: absolute;
@@ -74,15 +71,15 @@ b {
     animation: bright 2.5s ease-in-out infinite alternate;
 }
 
-.main_page{
+.main_page {
     margin-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
-.main_page > div{
+
+.main_page > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,7 +97,7 @@ button {
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     animation: glow_in 500ms ease forwards;
 }
 
@@ -113,7 +110,7 @@ button:active {
     height: 6em;
     position: relative;
     left: 0.5em;
-    margin-right: 1.7em; 
+    margin-right: 1.7em;
 }
 
 #screen {
@@ -209,30 +206,24 @@ button:active {
     }
 }
 
-
-
 @media screen and (max-width: 500px) {
     body {
         font-size: 1.5rem;
         height: fit-content;
     }
 
-    h1 {
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-
+    h1,
     b {
         font-size: 30px;
         margin-bottom: 20px;
-        animation: none; 
+        animation: none;
     }
 
     button {
         width: 5em;
         height: 5em;
         margin: 0.5em;
-        animation: none; 
+        animation: none;
     }
 
     .back {
@@ -244,23 +235,20 @@ button:active {
         width: 10em;
         height: 1.5em;
         margin-bottom: 0.5em;
-        animation: none; 
+        animation: none;
     }
 
     #screen:hover {
-        animation: none; 
+        animation: none;
     }
 
     .main_page {
         margin-top: 20px;
     }
 
-    button:hover {
-        animation: none; 
-    }
-
+    button:hover,
     button:hover span {
-        animation: none; 
+        animation: none;
     }
 
     i {
@@ -271,7 +259,8 @@ button:active {
     button:active {
         width: auto;
         height: auto;
+        position: static;
+        left: auto;
+        margin-right: auto;
     }
 }
-
-  
