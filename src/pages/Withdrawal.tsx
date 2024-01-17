@@ -86,7 +86,6 @@ const Withdrawal = () => {
               onClick={() => handleButtonClick(setEnteredNumber, "0")}
               value="0"
             />
-            {/* The Enter button can be optional since charges are calculated automatically */}
           </div>
         </div>
       </div>
