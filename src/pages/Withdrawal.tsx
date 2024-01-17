@@ -31,7 +31,11 @@ const Withdrawal = () => {
         <IoMdArrowRoundBack />
       </div>
       {enteredNumber && <h1>{enteredNumber}</h1>}
-      {charges > 0 && <p className="charges">Charges: ₦{charges}</p>}
+      {charges > 0 && (
+        <p className="charges">
+          Charges: <strong>₦{charges}</strong>
+        </p>
+      )}
       <div>
         <div id="numbers">
           <div>

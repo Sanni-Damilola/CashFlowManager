@@ -22,7 +22,7 @@ body {
 }
 
 .charges{
-    color: white;
+    color: var(--cont);
 }
 
 .footer {
