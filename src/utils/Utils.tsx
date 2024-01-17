@@ -1,33 +1,43 @@
 import React from "react";
 
-export interface ChargeRange {
+interface ChargeRange {
   min: number;
   max: number;
   charge: number;
 }
 
-export const chargeRanges: ChargeRange[] = [
-  { min: 1000, max: 5400, charge: 100 },
-  { min: 5400, max: 13400, charge: 200 },
-  { min: 13400, max: 17500, charge: 300 },
-  { min: 17500, max: 28500, charge: 400 },
-  { min: 28500, max: 38500, charge: 500 },
-  { min: 38500, max: 48500, charge: 600 },
-  { min: 48500, max: 58500, charge: 700 },
-];
+export function calculateCharges(amount: number): number | undefined {
+  const chargeRanges: ChargeRange[] = [
+    { min: 1000, max: 5400, charge: 100 },
+    { min: 5400, max: 13400, charge: 200 },
+    { min: 13400, max: 17500, charge: 300 },
+    { min: 17500, max: 28500, charge: 400 },
+    { min: 28500, max: 38500, charge: 500 },
+    { min: 38500, max: 48500, charge: 600 },
+    { min: 48500, max: 58500, charge: 700 },
+  ];
 
-export const calculateCharges = (value: number): number => {
-  const range = chargeRanges.find(
-    (range) => value >= range.min && value <= range.max
+  const incrementAmount: number = 100;
+
+  let lastRange: ChargeRange = chargeRanges[chargeRanges.length - 1];
+
+  // Dynamically add ranges based on the last range
+  while (amount > lastRange.max) {
+    lastRange = {
+      min: lastRange.max,
+      max: lastRange.max + 10000,
+      charge: lastRange.charge + incrementAmount,
+    };
+    chargeRanges.push(lastRange);
+  }
+
+  // Find the applicable charge range for the given amount
+  const matchingRange = chargeRanges.find(
+    ({ min, max }) => amount >= min && amount <= max
   );
 
-  if (range) {
-    return value >= 58500 ? range.charge + 100 : range.charge;
-  } else {
-    const additionalCharge = Math.floor((value - 58500) / 1000) * 100 + 700;
-    return additionalCharge >= 0 ? additionalCharge : 0;
-  }
-};
+  return matchingRange?.charge;
+}
 
 export const handleButtonClick = (
   setEnteredNumber: React.Dispatch<React.SetStateAction<string>>,
@@ -37,14 +47,11 @@ export const handleButtonClick = (
     if (prevNumber.length < 12) {
       const newNumber = (prevNumber + number).replace(/\D/g, "");
 
-      // Check if the number has three or more digits
       if (newNumber.length >= 3) {
         const formattedNumber = new Intl.NumberFormat().format(
           Number(newNumber)
         );
-
         const cleanedNumber = formattedNumber.replace(/,$/, "");
-
         return cleanedNumber;
       } else {
         return newNumber;

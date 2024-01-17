@@ -1,25 +1,33 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { MdCancel } from "react-icons/md";
+import { IoMdArrowRoundBack } from "react-icons/io";
 import {
   calculateCharges,
   handleButtonClick,
   handleCancel,
   handleNavigateBack,
 } from "../utils/Utils";
-import { IoMdArrowRoundBack } from "react-icons/io";
+
+const NumberButton = ({ onClick, value }: { onClick: () => void; value: string }) => (
+  <button onClick={onClick}>
+    <span>{value}</span>
+  </button>
+);
 
 const Withdrawal = () => {
   const [charges, setCharges] = useState<number>(0);
   const [enteredNumber, setEnteredNumber] = useState<string>("");
 
-  useEffect(() => {
-    // Use the calculateCharges function to automatically update charges
+  const calculatedCharges = useMemo(() => {
     const numericValue = Number(enteredNumber.replace(/,/g, ""));
-    const calculatedCharges = calculateCharges(numericValue);
-
-    // Set the charges state
-    setCharges(calculatedCharges);
+    return calculateCharges(numericValue);
   }, [enteredNumber]);
+
+  useEffect(() => {
+    if (calculatedCharges !== undefined) {
+      setCharges(calculatedCharges);
+    }
+  }, [calculatedCharges]);
 
   return (
     <div>
@@ -32,48 +40,24 @@ const Withdrawal = () => {
       <div>
         <div id="numbers">
           <div>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "1")}>
-              <span>1</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "2")}>
-              <span>2</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "3")}>
-              <span>3</span>
-            </button>
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "1")} value="1" />
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "2")} value="2" />
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "3")} value="3" />
           </div>
 
           <div>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "4")}>
-              <span>4</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "5")}>
-              <span>5</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "6")}>
-              <span>6</span>
-            </button>
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "4")} value="4" />
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "5")} value="5" />
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "6")} value="6" />
           </div>
           <div>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "7")}>
-              <span>7</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "8")}>
-              <span>8</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "9")}>
-              <span>9</span>
-            </button>
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "7")} value="7" />
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "8")} value="8" />
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "9")} value="9" />
           </div>
           <div>
-            <button onClick={() => handleCancel(setEnteredNumber)}>
-              <span>
-                <MdCancel />
-              </span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "0")}>
-              <span>0</span>
-            </button>
+            <NumberButton onClick={() => handleCancel(setEnteredNumber)} value={<MdCancel />} />
+            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "0")} value="0" />
             {/* The Enter button can be optional since charges are calculated automatically */}
           </div>
         </div>
