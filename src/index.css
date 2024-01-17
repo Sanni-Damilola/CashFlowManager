@@ -21,6 +21,10 @@ body {
     align-content: center;
 }
 
+.charges{
+    color: white;
+}
+
 .footer {
   position: fixed;
   bottom: 0;

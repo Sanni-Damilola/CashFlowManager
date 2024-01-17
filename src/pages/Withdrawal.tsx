@@ -1,14 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdCancel } from "react-icons/md";
-import { IoEnterOutline } from "react-icons/io5";
 import {
+  calculateCharges,
   handleButtonClick,
   handleCancel,
   handleNavigateBack,
 } from "../utils/Utils";
 import { IoMdArrowRoundBack } from "react-icons/io";
+
 const Withdrawal = () => {
+  const [charges, setCharges] = useState<number>(0);
   const [enteredNumber, setEnteredNumber] = useState<string>("");
+
+  useEffect(() => {
+    // Use the calculateCharges function to automatically update charges
+    const numericValue = Number(enteredNumber.replace(/,/g, ""));
+    const calculatedCharges = calculateCharges(numericValue);
+
+    // Set the charges state
+    setCharges(calculatedCharges);
+  }, [enteredNumber]);
 
   return (
     <div>
@@ -17,6 +28,7 @@ const Withdrawal = () => {
         <IoMdArrowRoundBack />
       </div>
       {enteredNumber && <h1>{enteredNumber}</h1>}
+      {charges > 0 && <p className="charges">Charges: ₦{charges}</p>}
       <div>
         <div id="numbers">
           <div>
@@ -62,11 +74,7 @@ const Withdrawal = () => {
             <button onClick={() => handleButtonClick(setEnteredNumber, "0")}>
               <span>0</span>
             </button>
-            <button onClick={() => alert("In Progress")}>
-              <span>
-                <IoEnterOutline />
-              </span>
-            </button>
+            {/* The Enter button can be optional since charges are calculated automatically */}
           </div>
         </div>
       </div>
