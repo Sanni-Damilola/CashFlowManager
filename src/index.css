@@ -252,6 +252,7 @@ button:hover span {
 @media screen and (max-width: 500px) {
     body {
         font-size: 1.5rem;
+        overflow: scroll;
         height: fit-content;
     }
 
@@ -301,5 +302,10 @@ button:hover span {
         text-transform: capitalize;
     }
 
-    
+    .charges{
+        font-size: 20px;
+    }
+    h1{
+        font-size: 18px;
+    }
 }
