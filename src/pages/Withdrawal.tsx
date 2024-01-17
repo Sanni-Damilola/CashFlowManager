@@ -22,7 +22,7 @@ const Withdrawal = () => {
     if (enteredNumber !== "" && calculatedCharges !== undefined) {
       setCharges(calculatedCharges);
     } else {
-      setCharges(null); // Set charges to null when enteredNumber is empty
+      setCharges(null);
     }
   }, [enteredNumber, calculatedCharges]);
 
