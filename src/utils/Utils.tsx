@@ -21,7 +21,6 @@ export function calculateCharges(amount: number): number | undefined {
 
   let lastRange: ChargeRange = chargeRanges[chargeRanges.length - 1];
 
-  // Dynamically add ranges based on the last range
   while (amount > lastRange.max) {
     lastRange = {
       min: lastRange.max,
@@ -31,7 +30,6 @@ export function calculateCharges(amount: number): number | undefined {
     chargeRanges.push(lastRange);
   }
 
-  // Find the applicable charge range for the given amount
   const matchingRange = chargeRanges.find(
     ({ min, max }) => amount >= min && amount <= max
   );

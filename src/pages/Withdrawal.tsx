@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { MdCancel } from "react-icons/md";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import {
@@ -7,12 +7,7 @@ import {
   handleCancel,
   handleNavigateBack,
 } from "../utils/Utils";
-
-const NumberButton = ({ onClick, value }: { onClick: () => void; value: string }) => (
-  <button onClick={onClick}>
-    <span>{value}</span>
-  </button>
-);
+import { NumberButton } from "../utils/useButton";
 
 const Withdrawal = () => {
   const [charges, setCharges] = useState<number>(0);
@@ -40,24 +35,57 @@ const Withdrawal = () => {
       <div>
         <div id="numbers">
           <div>
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "1")} value="1" />
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "2")} value="2" />
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "3")} value="3" />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "1")}
+              value="1"
+            />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "2")}
+              value="2"
+            />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "3")}
+              value="3"
+            />
           </div>
 
           <div>
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "4")} value="4" />
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "5")} value="5" />
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "6")} value="6" />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "4")}
+              value="4"
+            />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "5")}
+              value="5"
+            />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "6")}
+              value="6"
+            />
           </div>
           <div>
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "7")} value="7" />
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "8")} value="8" />
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "9")} value="9" />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "7")}
+              value="7"
+            />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "8")}
+              value="8"
+            />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "9")}
+              value="9"
+            />
           </div>
           <div>
-            <NumberButton onClick={() => handleCancel(setEnteredNumber)} value={<MdCancel />} />
-            <NumberButton onClick={() => handleButtonClick(setEnteredNumber, "0")} value="0" />
+            <NumberButton
+              onClick={() => handleCancel(setEnteredNumber)}
+              value={<MdCancel />}
+            />
+            <NumberButton
+              onClick={() => handleButtonClick(setEnteredNumber, "0")}
+              value="0"
+            />
             {/* The Enter button can be optional since charges are calculated automatically */}
           </div>
         </div>
