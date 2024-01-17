@@ -10,7 +10,7 @@ import {
 import { NumberButton } from "../utils/useButton";
 
 const Withdrawal = () => {
-  const [charges, setCharges] = useState<number>(0);
+  const [charges, setCharges] = useState<number | null>(null); // Use null for representing empty charges
   const [enteredNumber, setEnteredNumber] = useState<string>("");
 
   const calculatedCharges = useMemo(() => {
@@ -19,10 +19,12 @@ const Withdrawal = () => {
   }, [enteredNumber]);
 
   useEffect(() => {
-    if (calculatedCharges !== undefined) {
+    if (enteredNumber !== "" && calculatedCharges !== undefined) {
       setCharges(calculatedCharges);
+    } else {
+      setCharges(null); // Set charges to null when enteredNumber is empty
     }
-  }, [calculatedCharges]);
+  }, [enteredNumber, calculatedCharges]);
 
   return (
     <div>
@@ -31,7 +33,7 @@ const Withdrawal = () => {
         <IoMdArrowRoundBack />
       </div>
       {enteredNumber && <h1>{enteredNumber}</h1>}
-      {charges > 0 && (
+      {charges! > 0 && (
         <p className="charges">
           Charges: <strong>₦{charges}</strong>
         </p>
