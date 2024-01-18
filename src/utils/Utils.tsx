@@ -78,5 +78,5 @@ export const handleCancel = (
 };
 
 export const handleNavigateBack = (): void => {
-  window.history.back();
+  window.location.href = "/";
 };
