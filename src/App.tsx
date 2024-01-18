@@ -6,7 +6,7 @@ import { Footer } from "./static";
 const App = () => {
   return (
     <div style={{ position: "relative" }}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div className="loading-spinner">Loading...</div>}>
         <RouterProvider router={Routes()} />
       </Suspense>
       <Footer />
