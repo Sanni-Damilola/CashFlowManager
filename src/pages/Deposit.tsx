@@ -5,7 +5,6 @@ import {
   handleCancel,
   handleNavigateBack,
 } from "../utils/Utils";
-import { IoEnterOutline } from "react-icons/io5";
 import { MdCancel } from "react-icons/md";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
@@ -16,7 +15,7 @@ const Deposit = () => {
     ["1", "2", "3"],
     ["4", "5", "6"],
     ["7", "8", "9"],
-    [<MdCancel />, "0", <IoEnterOutline />],
+    [<MdCancel />, "0"],
   ];
 
   return (
