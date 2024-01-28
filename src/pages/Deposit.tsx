@@ -12,6 +12,13 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 const Deposit = () => {
   const [enteredNumber, setEnteredNumber] = useState<string>("");
 
+  const numberButtons = [
+    ["1", "2", "3"],
+    ["4", "5", "6"],
+    ["7", "8", "9"],
+    [<MdCancel />, "0", <IoEnterOutline />],
+  ];
+
   return (
     <div>
       <i>deposit</i>
@@ -21,55 +28,24 @@ const Deposit = () => {
       {enteredNumber && <h1>{enteredNumber}</h1>}
       <div>
         <div id="numbers">
-          <div>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "1")}>
-              <span>1</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "2")}>
-              <span>2</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "3")}>
-              <span>3</span>
-            </button>
-          </div>
-
-          <div>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "4")}>
-              <span>4</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "5")}>
-              <span>5</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "6")}>
-              <span>6</span>
-            </button>
-          </div>
-          <div>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "7")}>
-              <span>7</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "8")}>
-              <span>8</span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "9")}>
-              <span>9</span>
-            </button>
-          </div>
-          <div>
-            <button onClick={() => handleCancel(setEnteredNumber)}>
-              <span>
-                <MdCancel />
-              </span>
-            </button>
-            <button onClick={() => handleButtonClick(setEnteredNumber, "0")}>
-              <span>0</span>
-            </button>
-            <button onClick={() => alert("In Progress")}>
-              <span>
-                <IoEnterOutline />
-              </span>
-            </button>
-          </div>
+          {numberButtons.map((row, rowIndex) => (
+            <div key={rowIndex}>
+              {row.map((number, colIndex) => (
+                <button
+                  key={colIndex}
+                  onClick={() => {
+                    if (typeof number === "string") {
+                      handleButtonClick(setEnteredNumber, number);
+                    } else {
+                      handleCancel(setEnteredNumber);
+                    }
+                  }}
+                >
+                  <span>{number}</span>
+                </button>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>
